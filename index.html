@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GA4 Practice Demo</title>
+  <meta name="description" content="GA4勉強会向けのデモサイトです。クリック、フォーム、商品選択、疑似購入のイベント確認に使えます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page-name="home">
+  <div class="page-shell">
+    <header class="hero">
+      <nav class="topbar" aria-label="グローバルナビゲーション">
+        <a class="brand" href="index.html">GA4 Practice</a>
+        <div class="topbar-links">
+          <a href="index.html" aria-current="page">トップ</a>
+          <a href="about.html">サービス紹介</a>
+          <a href="pricing.html">料金</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+      </nav>
+
+      <section class="hero-copy">
+        <p class="eyebrow">Google Analytics 4 Study Session</p>
+        <h1>回遊しながらGA4イベントを確認できる練習用サイト</h1>
+        <p class="hero-text">
+          トップ、サービス紹介、料金、お問い合わせの4ページ構成です。
+          ページ遷移と各ページの操作を組み合わせて、Realtime や DebugView の見え方を実演できます。
+        </p>
+        <div class="hero-actions">
+          <a class="primary-button" href="about.html" data-track-click="hero_cta" data-track-label="start_journey">サービス紹介を見る</a>
+          <button class="secondary-button" type="button" id="download-material">資料ダウンロード</button>
+        </div>
+        <dl class="hero-stats" aria-label="このサイトで試せるイベント数">
+          <div>
+            <dt>4</dt>
+            <dd>ページ構成</dd>
+          </div>
+          <div>
+            <dt>6+</dt>
+            <dd>デモしやすいイベント種別</dd>
+          </div>
+          <div>
+            <dt>0</dt>
+            <dd>ビルド不要</dd>
+          </div>
+        </dl>
+      </section>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Site Map</p>
+          <h2>勉強会で辿りやすい導線を用意しています</h2>
+          <p>ページごとに用途を分けることで、page_view とイベントの関係を自然に説明できます。</p>
+        </div>
+        <div class="scenario-grid">
+          <article class="panel">
+            <h3>サービス紹介</h3>
+            <p>比較表クリックやスクロールの説明に使うページです。</p>
+            <a class="solid-button" href="about.html" data-track-click="navigate_section" data-track-label="about_page">ページへ移動</a>
+          </article>
+          <article class="panel">
+            <h3>料金ページ</h3>
+            <p>select_item、add_to_cart、purchase を実演できます。</p>
+            <a class="solid-button" href="pricing.html" data-track-click="navigate_section" data-track-label="pricing_page">料金を見る</a>
+          </article>
+          <article class="panel">
+            <h3>お問い合わせ</h3>
+            <p>generate_lead とフォーム送信の説明用ページです。</p>
+            <a class="solid-button" href="contact.html" data-track-click="navigate_section" data-track-label="contact_page">フォームへ進む</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="section-heading">
+          <p class="eyebrow">Suggested Journey</p>
+          <h2>おすすめのデモ進行</h2>
+          <p>この順番で触ると、ページ遷移とイベントの両方を短時間で見せられます。</p>
+        </div>
+        <div class="reading-columns">
+          <article class="panel">
+            <span class="badge">Step 1</span>
+            <h3>トップから回遊開始</h3>
+            <p>ナビゲーションやヒーローCTAのクリックを見せます。</p>
+          </article>
+          <article class="panel">
+            <span class="badge">Step 2</span>
+            <h3>料金ページで商品系イベント</h3>
+            <p>select_item と add_to_cart を実行してRealtimeで確認します。</p>
+          </article>
+          <article class="panel">
+            <span class="badge">Step 3</span>
+            <h3>お問い合わせでリード獲得</h3>
+            <p>フォーム送信で generate_lead を見せて締めます。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Measurement Notes</p>
+          <h2>勉強会で見せやすい観点</h2>
+          <p>複数ページ化により、単発イベントではなく導線として分析できるようにしています。</p>
+        </div>
+        <div class="reading-columns">
+          <article class="panel">
+            <h3>page_view</h3>
+            <p>ページごとの流入と離脱、回遊の違いを見せやすくなります。</p>
+          </article>
+          <article class="panel">
+            <h3>比較しやすいCTA</h3>
+            <p>どのページのどのボタンが押されたかを自然に比較できます。</p>
+          </article>
+          <article class="panel">
+            <h3>ファネル風の見せ方</h3>
+            <p>トップから料金、問い合わせまでを簡易ファネルとして説明できます。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="event-console panel" aria-live="polite">
+      <div>
+        <p class="eyebrow">Debug Console</p>
+        <h2>最後に送ったイベント</h2>
+      </div>
+      <pre id="event-log">まだイベントは送信されていません。</pre>
+    </aside>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

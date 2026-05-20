@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サービス紹介 | GA4 Practice Demo</title>
+  <meta name="description" content="GA4勉強会向けのサービス紹介ページです。スクロールやCTAクリックの計測デモに使えます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page-name="about">
+  <div class="page-shell">
+    <header class="hero">
+      <nav class="topbar" aria-label="グローバルナビゲーション">
+        <a class="brand" href="index.html">GA4 Practice</a>
+        <div class="topbar-links">
+          <a href="index.html">トップ</a>
+          <a href="about.html" aria-current="page">サービス紹介</a>
+          <a href="pricing.html">料金</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+      </nav>
+
+      <section class="hero-copy">
+        <p class="eyebrow">Service Page</p>
+        <h1>サービス紹介ページで回遊とクリックを見せる</h1>
+        <p class="hero-text">トップから流入した利用者が内容を読み、比較表や料金ページへ進む想定のページです。スクロールと中間CTAの説明に向いています。</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="pricing.html" data-track-click="cta_click" data-track-label="move_to_pricing">料金を見る</a>
+          <a class="secondary-button" href="contact.html" data-track-click="cta_click" data-track-label="move_to_contact">相談する</a>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Comparison</p>
+          <h2>導入前に見られる比較情報</h2>
+          <p>どの情報に興味を持ったかをCTAごとに計測するイメージです。</p>
+        </div>
+        <div class="scenario-grid">
+          <article class="panel">
+            <h3>導入のしやすさ</h3>
+            <p>イベント設計の粒度や初期設定の説明に使えます。</p>
+            <button type="button" data-track-click="view_content" data-track-label="implementation_guide">導入ガイドを見る</button>
+          </article>
+          <article class="panel">
+            <h3>活用シーン</h3>
+            <p>レポート分析や改善提案までの導線を示せます。</p>
+            <button type="button" data-track-click="view_content" data-track-label="use_case_sheet">活用シーンを見る</button>
+          </article>
+          <article class="panel">
+            <h3>サポート範囲</h3>
+            <p>問い合わせ前に何を確認したかの例です。</p>
+            <button type="button" data-track-click="view_content" data-track-label="support_matrix">サポート範囲を見る</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-alt reading-section">
+        <div class="section-heading">
+          <p class="eyebrow">Long Read</p>
+          <h2>スクロール説明用の読み物</h2>
+          <p>長めの説明文を配置し、ユーザーエンゲージメントの概念説明に使えます。</p>
+        </div>
+        <div class="reading-columns">
+          <p>GA4はページ単位のアクセス数だけでなく、ユーザーがどのページを順番に見て、どの要素に反応したかをイベントとして扱います。複数ページで設計すると、単発のクリックよりも文脈をもった説明ができます。</p>
+          <p>サービス紹介ページは、商品ページほど強い購買意図がない段階の行動を観察する練習に向いています。比較表の閲覧、関連ページへの遷移、途中CTAのクリックなど、現実的な行動が揃えやすいためです。</p>
+          <p>勉強会では、ここで数回クリックした後に料金ページへ移動し、Realtimeのユーザー行動を追う見せ方が分かりやすいです。ページ遷移前後のイベントを並べると、導線として理解しやすくなります。</p>
+        </div>
+      </section>
+    </main>
+
+    <aside class="event-console panel" aria-live="polite">
+      <div>
+        <p class="eyebrow">Debug Console</p>
+        <h2>最後に送ったイベント</h2>
+      </div>
+      <pre id="event-log">まだイベントは送信されていません。</pre>
+    </aside>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

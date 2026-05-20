@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>料金 | GA4 Practice Demo</title>
+  <meta name="description" content="GA4勉強会向けの料金ページです。select_item、add_to_cart、purchase のデモに使えます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page-name="pricing">
+  <div class="page-shell">
+    <header class="hero">
+      <nav class="topbar" aria-label="グローバルナビゲーション">
+        <a class="brand" href="index.html">GA4 Practice</a>
+        <div class="topbar-links">
+          <a href="index.html">トップ</a>
+          <a href="about.html">サービス紹介</a>
+          <a href="pricing.html" aria-current="page">料金</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+      </nav>
+
+      <section class="hero-copy">
+        <p class="eyebrow">Pricing Page</p>
+        <h1>商品系イベントをまとまって試せる料金ページ</h1>
+        <p class="hero-text">各プランで詳細閲覧、カート追加、購入までを疑似的に行えます。トップやサービス紹介から遷移してきた前提で使うと回遊の説明がしやすくなります。</p>
+        <div class="hero-actions">
+          <a class="secondary-button" href="about.html" data-track-click="navigate_section" data-track-label="back_to_about">サービス紹介へ戻る</a>
+          <a class="primary-button" href="contact.html" data-track-click="navigate_section" data-track-label="move_to_contact_after_pricing">お問い合わせへ進む</a>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="section section-alt">
+        <div class="section-heading">
+          <p class="eyebrow">Commerce Demo</p>
+          <h2>プラン選択から購入イベントまで</h2>
+          <p>EC系の標準イベントを説明しやすいよう、商品カードを簡潔に並べています。</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card" data-product-id="plan-starter" data-product-name="Starter Plan" data-product-price="4900">
+            <span class="badge">Starter</span>
+            <h3>Starter Plan</h3>
+            <p>小規模サイト向けの導入プラン。</p>
+            <strong>¥4,900</strong>
+            <div class="product-actions">
+              <button type="button" class="ghost-button" data-action="select-item">詳細を見る</button>
+              <button type="button" class="solid-button" data-action="add-to-cart">カートに追加</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="plan-growth" data-product-name="Growth Plan" data-product-price="12800">
+            <span class="badge">Popular</span>
+            <h3>Growth Plan</h3>
+            <p>分析改善を学びたいチーム向け。</p>
+            <strong>¥12,800</strong>
+            <div class="product-actions">
+              <button type="button" class="ghost-button" data-action="select-item">詳細を見る</button>
+              <button type="button" class="solid-button" data-action="add-to-cart">カートに追加</button>
+            </div>
+          </article>
+
+          <article class="product-card" data-product-id="plan-enterprise" data-product-name="Enterprise Plan" data-product-price="35800">
+            <span class="badge">Advanced</span>
+            <h3>Enterprise Plan</h3>
+            <p>多拠点運用を前提にした上位プラン。</p>
+            <strong>¥35,800</strong>
+            <div class="product-actions">
+              <button type="button" class="ghost-button" data-action="select-item">詳細を見る</button>
+              <button type="button" class="solid-button" data-action="add-to-cart">カートに追加</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="cart-panel panel">
+          <div>
+            <p class="cart-label">疑似カート</p>
+            <h3 id="cart-status">まだ商品は入っていません</h3>
+          </div>
+          <button type="button" class="primary-button" id="purchase-button">疑似購入を送信</button>
+        </div>
+      </section>
+    </main>
+
+    <aside class="event-console panel" aria-live="polite">
+      <div>
+        <p class="eyebrow">Debug Console</p>
+        <h2>最後に送ったイベント</h2>
+      </div>
+      <pre id="event-log">まだイベントは送信されていません。</pre>
+    </aside>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
